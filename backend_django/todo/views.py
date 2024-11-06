@@ -13,6 +13,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [IsAuthenticated]
+    throttle_classes = [TaskThrottle]
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
